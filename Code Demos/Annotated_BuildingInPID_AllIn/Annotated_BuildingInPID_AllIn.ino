@@ -91,30 +91,7 @@ void loop(void)
   pidForward(pwmNominal);
   
   // print out to Serial Monitor the left and right encoder counts.
-  Serial.print(nCount);
-  Serial.print("\t");
-  Serial.print(lCount);
-  Serial.print("\t");
-  Serial.print(rCount);
-  Serial.print("\t");
-  Serial.print(encMean);
-  Serial.print("\t");
-  Serial.print(lErr);
-  Serial.print("\t");
-  Serial.print(rErr);
-  Serial.print("\t");
-  Serial.print(lErrIntegral);
-  Serial.print("\t");
-  Serial.print(rErrIntegral);
-  Serial.print("\t");
-  Serial.print(lErrDerivative);
-  Serial.print("\t");
-  Serial.print(rErrDerivative);
-  Serial.print("\t");
-  Serial.print(lDrive);
-  Serial.print("\t");
-  Serial.print(rDrive);
-  Serial.println("\t");
+  report();
 
   
 
@@ -177,4 +154,32 @@ void pidForward(int pwnNom){
 
   motors.leftDrive(lDrive);        // Start driving forward
   motors.rightDrive(rDrive);        // Start driving forward
+}
+
+void report(){
+    // print out to Serial Monitor the left and right encoder counts.
+  Serial.print(nCount);
+  Serial.print("\t");
+  Serial.print(lCount);
+  Serial.print("\t");
+  Serial.print(rCount);
+  Serial.print("\t");
+  Serial.print(encMean);
+  Serial.print("\t");
+  Serial.print(lErr);
+  Serial.print("\t");
+  Serial.print(rErr);
+  Serial.print("\t");
+  Serial.print(lErrIntegral);
+  Serial.print("\t");
+  Serial.print(rErrIntegral);
+  Serial.print("\t");
+  Serial.print(lErrDerivative);
+  Serial.print("\t");
+  Serial.print(rErrDerivative);
+  Serial.print("\t");
+  Serial.print(lDrive);
+  Serial.print("\t");
+  Serial.print(rDrive);
+  Serial.println("\t");
 }
