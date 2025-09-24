@@ -56,9 +56,8 @@ void buttonPressOnBoard(){ // 1st
   if (digitalRead(buttonPin) == LOW)
   {
     delay(500);
-    driveStraight(1000,500,1,0,0); // function that sets distance in mm and PWM intensity
+    driveStraight(1000,500,5,1,10); // function that sets distance in mm and PWM intensity
     delay(500);
-    driveTurnWide(2*PI,500,1,0,0);
   }
 }
 
